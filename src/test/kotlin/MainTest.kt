@@ -39,11 +39,31 @@ class MainTest {
     }
 
     @Test
-    fun `should say deuce when players both have 40`(){
+    fun `should return true when both players have 40`(){
         val player1 = Player(40)
         val player2 = Player(40)
 
         val expectedScore = true
+        val actualScore = compareScore(player1.score, player2.score)
+        assertEquals(expectedScore, actualScore)
+    }
+
+    @Test
+    fun `should return false when both players have diferent scores`(){
+        val player1 = Player(40)
+        val player2 = Player(30)
+
+        val expectedScore = false
+        val actualScore = compareScore(player1.score, player2.score)
+        assertEquals(expectedScore, actualScore)
+    }
+
+    @Test
+    fun `should return false when both players have same scores that are not 40`(){
+        val player1 = Player(30)
+        val player2 = Player(30)
+
+        val expectedScore = false
         val actualScore = compareScore(player1.score, player2.score)
         assertEquals(expectedScore, actualScore)
     }

@@ -13,3 +13,7 @@ fun incrementScore(oldScore: Int): Int {
             oldScore + 15
     }
 }
+
+fun compareScore(score: Int, score1: Int): Boolean {
+    return score == score1 && score == 40
+}
