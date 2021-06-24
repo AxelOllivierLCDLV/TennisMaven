@@ -3,5 +3,10 @@ fun main(args: Array<String>) {
 }
 
 fun incrementScore(oldScore: Int): Int {
-    return oldScore + 15
+    return if (oldScore == 30) {
+        40
+    }
+        else {
+            oldScore + 15
+    }
 }

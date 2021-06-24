@@ -20,4 +20,21 @@ class MainTest {
         val actualScore = incrementScore(oldScore)
         assertEquals(expectedScore, actualScore)
     }
+
+    @Test
+    fun `should increment the game score to 40`(){
+        val oldScore = 30
+        val expectedScore = 40
+
+        val actualScore = incrementScore(oldScore)
+        assertEquals(expectedScore, actualScore)
+    }
+
+    @Test
+    fun `should win the game`(){
+        val oldScore = 40
+        val expectedScore = 1
+        val actualScore = player1.incrementScore(oldScore)
+        assertEquals(player1.win, true)
+    }
 }
