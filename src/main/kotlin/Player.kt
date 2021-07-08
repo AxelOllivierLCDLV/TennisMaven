@@ -1,4 +1,4 @@
-class Player (val score: Int) {
+class Player (val score: Score) {
 
 
 }

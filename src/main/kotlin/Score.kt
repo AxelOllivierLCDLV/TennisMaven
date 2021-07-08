@@ -1,4 +1,4 @@
-enum class Score(val score: Int) {
+enum class Score(val value: Int) {
     LOVE(0),
     FIFTEEN(15),
     THIRTY(30),
