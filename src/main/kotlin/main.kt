@@ -2,15 +2,22 @@ fun main(args: Array<String>) {
     println("Hello World!")
 }
 
-fun incrementScore(oldScore: Int): Int {
-    return if (oldScore == 30) {
+fun incrementScore(winnerScore: Int, opponentScore: Int): Int {
+    return if (winnerScore == 30) {
         40
     }
-    else if (oldScore == 40) {
-        1
+    else if (winnerScore == 40) {
+        if (opponentScore == 40 ){
+            50
+        }
+
+        else {
+            1
+        }
+
     }
         else {
-            oldScore + 15
+            winnerScore + 15
     }
 }
 

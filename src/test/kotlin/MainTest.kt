@@ -5,10 +5,10 @@ class MainTest {
 
     @Test
     fun `should increment the game score to 15`(){
-        val player = Player(Score.LOVE)
+        val player1 = Player(Score.LOVE)
         val expectedScore = 15
 
-        val actualScore = incrementScore(player.score.value)
+        val actualScore = incrementScore(player1.score.value,0)
         assertEquals(expectedScore, actualScore)
     }
 
@@ -17,7 +17,7 @@ class MainTest {
         val player = Player(Score.FIFTEEN)
         val expectedScore = 30
 
-        val actualScore = incrementScore(player.score.value)
+        val actualScore = incrementScore(player.score.value,0)
         assertEquals(expectedScore, actualScore)
     }
 
@@ -26,15 +26,16 @@ class MainTest {
         val player = Player(Score.THIRTY)
         val expectedScore = 40
 
-        val actualScore = incrementScore(player.score.value)
+        val actualScore = incrementScore(player.score.value,0)
         assertEquals(expectedScore, actualScore)
     }
 
     @Test
     fun `should win the game`(){
-        val player = Player(Score.FOURTY)
+        val player1 = Player(Score.FOURTY)
+        val player2 = Player(Score.LOVE)
         val expectedScore = 1
-        val actualScore = incrementScore(player.score.value)
+        val actualScore = incrementScore(player1.score.value,player2.score.value)
         assertEquals(expectedScore, actualScore)
     }
 
@@ -49,7 +50,7 @@ class MainTest {
     }
 
     @Test
-    fun `should return false when both players have diferent scores`(){
+    fun `should return false when both players have different scores`(){
         val player1 = Player(Score.FOURTY)
         val player2 = Player(Score.THIRTY)
 
@@ -65,6 +66,17 @@ class MainTest {
 
         val expectedScore = false
         val actualScore = compareScore(player1.score.value, player2.score.value)
+        assertEquals(expectedScore, actualScore)
+    }
+
+    @Test
+    fun `should return avantage if both players have 40 `(){
+        val player1 = Player(Score.FOURTY)
+        val player2 = Player(Score.FOURTY)
+        val expectedScore = 50
+
+        val actualScore = incrementScore(player1.score.value,player2.score.value)
+
         assertEquals(expectedScore, actualScore)
     }
 

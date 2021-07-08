@@ -3,5 +3,6 @@ enum class Score(val value: Int) {
     FIFTEEN(15),
     THIRTY(30),
     FOURTY(40),
-    WON(1)
+    WON(1),
+    AVANTAGE(50)
 }
