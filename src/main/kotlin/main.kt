@@ -2,22 +2,30 @@ fun main(args: Array<String>) {
     println("Hello World!")
 }
 
-fun incrementScore(winnerScore: Int, opponentScore: Int): Int {
-    return if (winnerScore == 30) {
-        40
-    }
-    else if (winnerScore == 40) {
-        if (opponentScore == 40 ){
-            50
+fun incrementScore(winnerScore: Int, opponentScore: Int): Pair<Int, Int> {
+    return when (winnerScore) {
+        30 -> {
+            Pair(40, opponentScore)
         }
-
-        else {
-            1
+        50 -> {
+            Pair(1, opponentScore)
         }
-
-    }
-        else {
-            winnerScore + 15
+        40 -> {
+            when (opponentScore) {
+                40 -> {
+                    Pair(50, opponentScore)
+                }
+                50 -> {
+                    Pair(40, 40)
+                }
+                else -> {
+                    Pair(1, opponentScore)
+                }
+            }
+        }
+        else -> {
+            Pair(winnerScore + 15, opponentScore)
+        }
     }
 }
 
