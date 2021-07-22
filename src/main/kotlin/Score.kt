@@ -9,5 +9,7 @@ enum class Score(val value: Int) {
 
     fun next(): Score = enumValues<Score>()[ordinal + 1]
 
+    fun previous(): Score = enumValues<Score>()[ordinal - 1]
+
 
 }

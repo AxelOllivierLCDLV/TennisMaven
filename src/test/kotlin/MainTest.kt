@@ -10,7 +10,7 @@ class MainTest {
         val expectedScore = Score.FIFTEEN
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1, player2).first
+        val actualScore = match.incrementPlayersScore(player1, player2).first.score
         assertEquals(expectedScore, actualScore)
     }
 
@@ -21,7 +21,7 @@ class MainTest {
         val expectedScore = Score.THIRTY
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1, player2).first
+        val actualScore = match.incrementPlayersScore(player1, player2).first.score
         assertEquals(expectedScore, actualScore)
     }
 
@@ -33,7 +33,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1, player2).first
+        val actualScore = match.incrementPlayersScore(player1, player2).first.score
         assertEquals(expectedScore, actualScore)
     }
 
@@ -45,7 +45,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1, player2).first
+        val actualScore = match.incrementPlayersScore(player1, player2).first.score
         assertEquals(expectedScore, actualScore)
     }
 
@@ -57,7 +57,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1, player2).first
+        val actualScore = match.incrementPlayersScore(player1, player2).first.score
 
         assertEquals(expectedScore, actualScore)
     }
@@ -70,7 +70,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1, player2).first
+        val actualScore = match.incrementPlayersScore(player1, player2).first.score
 
         assertEquals(expectedScore, actualScore)
     }
@@ -83,7 +83,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1, player2).first
+        val actualScore = match.incrementPlayersScore(player1, player2).first.score
 
         assertEquals(expectedScore, actualScore)
     }
@@ -96,7 +96,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1, player2).second
+        val actualScore = match.incrementPlayersScore(player1, player2).second.score
 
         assertEquals(expectedScore, actualScore)
     }
