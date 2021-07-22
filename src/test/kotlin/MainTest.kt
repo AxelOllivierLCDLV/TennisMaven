@@ -10,7 +10,7 @@ class MainTest {
         val expectedScore = 15
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1.score.value, player2.score.value).first
+        val actualScore = match.incrementScorePlayer1(player1, player2).first
         assertEquals(expectedScore, actualScore)
     }
 
@@ -21,7 +21,7 @@ class MainTest {
         val expectedScore = 30
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1.score.value, player2.score.value).first
+        val actualScore = match.incrementScorePlayer1(player1, player2).first
         assertEquals(expectedScore, actualScore)
     }
 
@@ -33,7 +33,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1.score.value, player2.score.value).first
+        val actualScore = match.incrementScorePlayer1(player1, player2).first
         assertEquals(expectedScore, actualScore)
     }
 
@@ -45,37 +45,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1.score.value, player2.score.value).first
-        assertEquals(expectedScore, actualScore)
-    }
-
-    @Test
-    fun `should return true when both players have 40`() {
-        val player1 = Player(Score.FOURTY)
-        val player2 = Player(Score.FOURTY)
-
-        val expectedScore = true
-        val actualScore = compareScore(player1.score.value, player2.score.value)
-        assertEquals(expectedScore, actualScore)
-    }
-
-    @Test
-    fun `should return false when both players have different scores`() {
-        val player1 = Player(Score.FOURTY)
-        val player2 = Player(Score.THIRTY)
-
-        val expectedScore = false
-        val actualScore = compareScore(player1.score.value, player2.score.value)
-        assertEquals(expectedScore, actualScore)
-    }
-
-    @Test
-    fun `should return false when both players have same scores that are not 40`() {
-        val player1 = Player(Score.THIRTY)
-        val player2 = Player(Score.THIRTY)
-
-        val expectedScore = false
-        val actualScore = compareScore(player1.score.value, player2.score.value)
+        val actualScore = match.incrementScorePlayer1(player1, player2).first
         assertEquals(expectedScore, actualScore)
     }
 
@@ -87,7 +57,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1.score.value, player2.score.value).first
+        val actualScore = match.incrementScorePlayer1(player1, player2).first
 
         assertEquals(expectedScore, actualScore)
     }
@@ -100,7 +70,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1.score.value, player2.score.value).first
+        val actualScore = match.incrementScorePlayer1(player1, player2).first
 
         assertEquals(expectedScore, actualScore)
     }
@@ -113,7 +83,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1.score.value, player2.score.value).first
+        val actualScore = match.incrementScorePlayer1(player1, player2).first
 
         assertEquals(expectedScore, actualScore)
     }
@@ -126,7 +96,7 @@ class MainTest {
 
         val match = Match(player1, player2)
 
-        val actualScore = match.incrementScorePlayer1(player1.score.value, player2.score.value).second
+        val actualScore = match.incrementScorePlayer1(player1, player2).second
 
         assertEquals(expectedScore, actualScore)
     }
