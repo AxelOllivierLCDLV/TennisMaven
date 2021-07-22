@@ -8,7 +8,7 @@ class MainTest {
         val player1 = Player(Score.LOVE)
         val player2 = Player(Score.LOVE)
         val expectedScore = Score.FIFTEEN
-        val match = Match(player1, player2)
+        val match = Match()
 
         val actualScore = match.incrementPlayersScore(player1, player2).first.score
         assertEquals(expectedScore, actualScore)
@@ -19,7 +19,7 @@ class MainTest {
         val player1 = Player(Score.FIFTEEN)
         val player2 = Player(Score.FIFTEEN)
         val expectedScore = Score.THIRTY
-        val match = Match(player1, player2)
+        val match = Match()
 
         val actualScore = match.incrementPlayersScore(player1, player2).first.score
         assertEquals(expectedScore, actualScore)
@@ -31,7 +31,7 @@ class MainTest {
         val player2 = Player(Score.THIRTY)
         val expectedScore = Score.FOURTY
 
-        val match = Match(player1, player2)
+        val match = Match()
 
         val actualScore = match.incrementPlayersScore(player1, player2).first.score
         assertEquals(expectedScore, actualScore)
@@ -43,7 +43,7 @@ class MainTest {
         val player2 = Player(Score.LOVE)
         val expectedScore = Score.WON
 
-        val match = Match(player1, player2)
+        val match = Match()
 
         val actualScore = match.incrementPlayersScore(player1, player2).first.score
         assertEquals(expectedScore, actualScore)
@@ -55,7 +55,7 @@ class MainTest {
         val player2 = Player(Score.FOURTY)
         val expectedScore = Score.ADVANTAGE
 
-        val match = Match(player1, player2)
+        val match = Match()
 
         val actualScore = match.incrementPlayersScore(player1, player2).first.score
 
@@ -68,7 +68,7 @@ class MainTest {
         val player2 = Player(Score.FOURTY)
         val expectedScore = Score.WON
 
-        val match = Match(player1, player2)
+        val match = Match()
 
         val actualScore = match.incrementPlayersScore(player1, player2).first.score
 
@@ -81,7 +81,7 @@ class MainTest {
         val player2 = Player(Score.ADVANTAGE)
         val expectedScore = Score.FOURTY
 
-        val match = Match(player1, player2)
+        val match = Match()
 
         val actualScore = match.incrementPlayersScore(player1, player2).first.score
 
@@ -94,7 +94,7 @@ class MainTest {
         val player2 = Player(Score.ADVANTAGE)
         val expectedScore = Score.FOURTY
 
-        val match = Match(player1, player2)
+        val match = Match()
 
         val actualScore = match.incrementPlayersScore(player1, player2).second.score
 
