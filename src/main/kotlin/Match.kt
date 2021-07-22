@@ -1,57 +1,31 @@
 class Match (val player1: Player, val player2: Player){
 
-    fun incrementScorePlayer1(player1: Player, player2: Player): Pair<Int, Int> {
-        return when (player1.score.value) {
-            30 -> {
-                Pair(40, player2.score.value)
+    fun incrementScorePlayer1(player1: Player, player2: Player): Pair<Score, Score> {
+        return when (player1.score) {
+            Score.THIRTY -> {
+                Pair(Score.FOURTY, player2.score)
             }
-            50 -> {
-                Pair(1, player2.score.value)
+            Score.AVANTAGE -> {
+                Pair(Score.WON, player2.score)
             }
-            40 -> {
-                when (player2.score.value) {
-                    40 -> {
-                        Pair(50, player2.score.value)
+            Score.FOURTY -> {
+                when (player2.score) {
+                    Score.FOURTY -> {
+                        Pair(Score.AVANTAGE, player2.score)
                     }
-                    50 -> {
-                        Pair(40, 40)
+                    Score.AVANTAGE -> {
+                        Pair(Score.FOURTY, Score.FOURTY)
                     }
                     else -> {
-                        Pair(1, player2.score.value)
+                        Pair(Score.WON, player2.score)
                     }
                 }
             }
             else -> {
-                Pair(player1.score.value + 15, player2.score.value)
+                Pair(player1.score.next, player2.score)
             }
         }
     }
 
-    fun incrementScorePlayer2(player1: Int, player2: Int): Pair<Int, Int> {
-        return when (player2) {
-            30 -> {
-                Pair(player1, 40)
-            }
-            50 -> {
-                Pair(player1, 1)
-            }
-            40 -> {
-                when (player1) {
-                    40 -> {
-                        Pair(player1, 50)
-                    }
-                    50 -> {
-                        Pair(player1, 40)
-                    }
-                    else -> {
-                        Pair(player1, 1)
-                    }
-                }
-            }
-            else -> {
-                Pair(player1, player2 + 15)
-            }
-        }
-    }
 
 }
