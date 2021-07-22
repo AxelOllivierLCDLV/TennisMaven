@@ -8,7 +8,7 @@ enum class Score(val value: Int) {
     WON(1);
 
     fun next(): Score = enumValues<Score>()[ordinal + 1]
-
+    fun nextToWin(): Score = enumValues<Score>()[ordinal + 2]
     fun previous(): Score = enumValues<Score>()[ordinal - 1]
 
 
