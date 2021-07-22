@@ -1,28 +1,28 @@
 class Match (val player1: Player, val player2: Player){
 
-    fun incrementScorePlayer1(player1: Player, player2: Player): Pair<Score, Score> {
-        return when (player1.score) {
+    fun incrementScorePlayer1(winningPlayer: Player, losingPlayer: Player): Pair<Score, Score> {
+        return when (winningPlayer.score) {
             Score.THIRTY -> {
-                Pair(Score.FOURTY, player2.score)
+                Pair(Score.FOURTY, losingPlayer.score)
             }
             Score.ADVANTAGE -> {
-                Pair(Score.WON, player2.score)
+                Pair(Score.WON, losingPlayer.score)
             }
             Score.FOURTY -> {
-                when (player2.score) {
+                when (losingPlayer.score) {
                     Score.FOURTY -> {
-                        Pair(Score.ADVANTAGE, player2.score)
+                        Pair(Score.ADVANTAGE, losingPlayer.score)
                     }
                     Score.ADVANTAGE -> {
                         Pair(Score.FOURTY, Score.FOURTY)
                     }
                     else -> {
-                        Pair(Score.WON, player2.score)
+                        Pair(Score.WON, losingPlayer.score)
                     }
                 }
             }
             else -> {
-                Pair(player1.score.next(), player2.score)
+                Pair(winningPlayer.score.next(), losingPlayer.score)
             }
         }
     }
