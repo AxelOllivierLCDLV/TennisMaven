@@ -5,15 +5,15 @@ class Match (val player1: Player, val player2: Player){
             Score.THIRTY -> {
                 Pair(Score.FOURTY, player2.score)
             }
-            Score.AVANTAGE -> {
+            Score.ADVANTAGE -> {
                 Pair(Score.WON, player2.score)
             }
             Score.FOURTY -> {
                 when (player2.score) {
                     Score.FOURTY -> {
-                        Pair(Score.AVANTAGE, player2.score)
+                        Pair(Score.ADVANTAGE, player2.score)
                     }
-                    Score.AVANTAGE -> {
+                    Score.ADVANTAGE -> {
                         Pair(Score.FOURTY, Score.FOURTY)
                     }
                     else -> {
@@ -22,7 +22,7 @@ class Match (val player1: Player, val player2: Player){
                 }
             }
             else -> {
-                Pair(player1.score.next, player2.score)
+                Pair(player1.score.next(), player2.score)
             }
         }
     }

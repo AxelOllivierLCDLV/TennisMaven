@@ -1,12 +1,13 @@
 enum class Score(val value: Int) {
-    val next: Score
 
     LOVE(0),
     FIFTEEN(15),
     THIRTY(30),
     FOURTY(40),
-    WON(1),
-    AVANTAGE(50);
+    ADVANTAGE(50),
+    WON(1);
+
+    fun next(): Score = enumValues<Score>()[ordinal + 1]
 
 
 }

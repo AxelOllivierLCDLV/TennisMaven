@@ -7,7 +7,7 @@ class MainTest {
     fun `should increment the game score to 15`() {
         val player1 = Player(Score.LOVE)
         val player2 = Player(Score.LOVE)
-        val expectedScore = 15
+        val expectedScore = Score.FIFTEEN
         val match = Match(player1, player2)
 
         val actualScore = match.incrementScorePlayer1(player1, player2).first
@@ -18,7 +18,7 @@ class MainTest {
     fun `should increment the game score to 30`() {
         val player1 = Player(Score.FIFTEEN)
         val player2 = Player(Score.FIFTEEN)
-        val expectedScore = 30
+        val expectedScore = Score.THIRTY
         val match = Match(player1, player2)
 
         val actualScore = match.incrementScorePlayer1(player1, player2).first
@@ -29,7 +29,7 @@ class MainTest {
     fun `should increment the game score to 40`() {
         val player1 = Player(Score.THIRTY)
         val player2 = Player(Score.THIRTY)
-        val expectedScore = 40
+        val expectedScore = Score.FOURTY
 
         val match = Match(player1, player2)
 
@@ -41,7 +41,7 @@ class MainTest {
     fun `should win the game`() {
         val player1 = Player(Score.FOURTY)
         val player2 = Player(Score.LOVE)
-        val expectedScore = 1
+        val expectedScore = Score.WON
 
         val match = Match(player1, player2)
 
@@ -53,7 +53,7 @@ class MainTest {
     fun `should return avantage if both players have 40 `() {
         val player1 = Player(Score.FOURTY)
         val player2 = Player(Score.FOURTY)
-        val expectedScore = 50
+        val expectedScore = Score.ADVANTAGE
 
         val match = Match(player1, player2)
 
@@ -64,9 +64,9 @@ class MainTest {
 
     @Test
     fun `should return win the game if winning player had advantage`() {
-        val player1 = Player(Score.AVANTAGE)
+        val player1 = Player(Score.ADVANTAGE)
         val player2 = Player(Score.FOURTY)
-        val expectedScore = 1
+        val expectedScore = Score.WON
 
         val match = Match(player1, player2)
 
@@ -78,8 +78,8 @@ class MainTest {
     @Test
     fun `should return forty when win the ball and opponent had advantage`() {
         val player1 = Player(Score.FOURTY)
-        val player2 = Player(Score.AVANTAGE)
-        val expectedScore = 40
+        val player2 = Player(Score.ADVANTAGE)
+        val expectedScore = Score.FOURTY
 
         val match = Match(player1, player2)
 
@@ -91,8 +91,8 @@ class MainTest {
     @Test
     fun `should return forty for opponent player when he-she had advantage`() {
         val player1 = Player(Score.FOURTY)
-        val player2 = Player(Score.AVANTAGE)
-        val expectedScore = 40
+        val player2 = Player(Score.ADVANTAGE)
+        val expectedScore = Score.FOURTY
 
         val match = Match(player1, player2)
 
