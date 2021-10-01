@@ -1,6 +1,7 @@
-class Player (var score: Score = Score.LOVE) {
+class Player(var score: Int = 0) {
 
-    fun incrementScore() {this.score = score.next()}
-    fun incrementScoreToWin() {this.score = score.nextToWin()}
-    fun decrementScore() {this.score = score.previous()}
+    fun scores() {
+        this.score = score + 1
+    }
+
 }
