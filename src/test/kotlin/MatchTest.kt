@@ -1,25 +1,7 @@
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
-class TennisTest {
-
-    @Test
-    fun `should create the player with a score of 0`() {
-        val player = Player()
-        val expectedScore = 0
-
-        assertEquals(expectedScore, player.score)
-    }
-
-    @Test
-    fun `should increment the player score to 1`() {
-        val player = Player()
-        val expectedScore = 1
-
-        player.scores()
-
-        assertEquals(expectedScore, player.score)
-    }
+class MatchTest {
 
     @Test
     fun `should display score of love, love at start`(){

@@ -1,15 +1,15 @@
 class Match(private val firstPlayer: Player, private val secondPlayer: Player) {
 
     fun getScore(): String {
-        return if (firstPlayer.score >= 3 && secondPlayer.score == firstPlayer.score) {
+        return if (firstPlayer.isDeuceWith(secondPlayer)) {
             "Deuce"
-        } else if (firstPlayer.score >= 4 && firstPlayer.score - secondPlayer.score <= 1 && firstPlayer.score > secondPlayer.score) {
+        } else if (firstPlayer.hasAdvantageOn(secondPlayer)) {
             "Advantage Player 1"
-        } else if (secondPlayer.score >= 4 && secondPlayer.score - firstPlayer.score <= 1 && secondPlayer.score > firstPlayer.score) {
+        } else if (secondPlayer.hasAdvantageOn(firstPlayer)) {
             "Advantage Player 2"
-        } else if (firstPlayer.score >= 4 && firstPlayer.score - secondPlayer.score == 2 && firstPlayer.score > secondPlayer.score) {
+        } else if (firstPlayer.hasWonAgainst(secondPlayer)) {
             "Player 1 wins"
-        }else if (secondPlayer.score >= 4 && secondPlayer.score - firstPlayer.score == 2 && secondPlayer.score > firstPlayer.score) {
+        }else if (secondPlayer.hasWonAgainst(firstPlayer)) {
             "Player 2 wins"
         }else {
             scoreToString(firstPlayer.score) + ", " + scoreToString(secondPlayer.score)
